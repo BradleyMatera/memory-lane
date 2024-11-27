@@ -2,20 +2,188 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Custom styles */
+body {
+  font-family: 'Arial, sans-serif';
+  background-color: #f7fafc;
+  /* Light gray background */
+  color: #2d3748;
+  /* Dark gray text */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Georgia, serif';
+  margin-bottom: 1rem;
+  color: #1a202c;
+  /* Darker gray for headings */
+}
+
+h1 {
+  font-size: 2.25rem;
+  /* Tailwind's text-3xl */
+  font-weight: 700;
+  /* Tailwind's font-bold */
+}
+
+h2 {
+  font-size: 1.875rem;
+  /* Tailwind's text-2xl */
+  font-weight: 600;
+  /* Tailwind's font-semibold */
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #3182ce;
+  /* Tailwind's blue-600 */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #2b6cb0;
+  /* Tailwind's blue-700 */
+  text-decoration: underline;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+button {
+  display: inline-block;
+  background-color: #3182ce;
+  /* Tailwind's blue-600 */
+  color: #ffffff;
+  font-size: 1rem;
+  /* Tailwind's text-base */
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  /* Tailwind's rounded-md */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #2b6cb0;
+  /* Tailwind's blue-700 */
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e0;
+  /* Tailwind's gray-300 */
+  border-radius: 0.375rem;
+  /* Tailwind's rounded-md */
+  font-size: 1rem;
+  /* Tailwind's text-base */
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3182ce;
+  /* Tailwind's blue-600 */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+  /* Tailwind's focus-ring */
+}
+
+blockquote {
+  border-left: 4px solid #3182ce;
+  /* Tailwind's blue-600 */
+  padding-left: 1rem;
+  font-style: italic;
+  color: #4a5568;
+  /* Tailwind's gray-700 */
+  margin: 1rem 0;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  background-color: #edf2f7;
+  /* Tailwind's gray-100 */
+  color: #2d3748;
+  /* Tailwind's gray-800 */
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  /* Tailwind's rounded-md */
+}
+
+/* Utility classes */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #cbd5e0;
+  /* Tailwind's gray-300 */
+  border-radius: 0.375rem;
+  /* Tailwind's rounded-md */
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* Tailwind's shadow-sm */
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Tailwind's shadow */
+  transform: translateY(-2px);
+  transition: all 0.2s;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    /* Tailwind's text-4xl */
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    /* Tailwind's text-3xl */
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
